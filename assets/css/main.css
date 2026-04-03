@@ -2018,6 +2018,35 @@ input, select, textarea {
 
 /* Form */
 
+	/* Publications: replace ordered-list numbers with a '>' symbol */
+	.publications ol {
+		list-style: none;
+		padding-left: 0;
+		margin-left: 0;
+	}
+
+	.publications ol li {
+		position: relative;
+		padding-left: 1.2rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.publications ol li::before {
+		content: ">";
+		position: absolute;
+		left: 0.08rem; /* small horizontal nudge */
+		top: 0.5rem; /* align with first line */
+		transform: none;
+		color: #E8492C;
+		font-weight: 700;
+		line-height: 1;
+		display: inline-block;
+		font-size: 1rem;
+	}
+
+	/* If you prefer this site-wide, change .publications ol -> ol */
+
+
 	form {
 		margin: 0 0 2rem 0;
 	}
@@ -3312,7 +3341,11 @@ input, select, textarea {
 				}
 
 		#wrapper > section {
+			margin: 7.5rem 0 0 0;
 			position: relative;
+		}
+		#wrapper > section > section {
+			margin: 0rem 0 0 0;
 		}
 
 			#wrapper > section > header:before {
@@ -3350,6 +3383,7 @@ input, select, textarea {
 
 			#wrapper > section > header h1 {
 				margin-top: -2rem;
+				margin-right: 4.5rem;
 				color: #ffffff;
 			}
 
@@ -3366,7 +3400,7 @@ input, select, textarea {
 			}
 
 				#wrapper > section > .content > section:first-child {
-					margin-top: 6rem;
+					margin-top: 0;
 				}
 
 			#wrapper > section.intro {
@@ -3431,10 +3465,6 @@ input, select, textarea {
 				color: inherit;
 			}
 
-		#wrapper section {
-			margin: 7.5rem 0 0 0;
-		}
-
 			#wrapper section > header {
 				padding: 0 10rem 0 5rem;
 				width: 35rem;
@@ -3453,12 +3483,21 @@ input, select, textarea {
 			left: calc(50vw - 5rem);
 		}
 
-		#wrapper > section > header h1:before, #wrapper > section > header h2:before {
+		#wrapper > section > header h1:before{
+			right: -9.5rem;
+			width: 2.5rem;
+		}
+
+		#wrapper > section > header h2:before {
 			right: -5rem;
 			width: 2.5rem;
 		}
 
-		#wrapper > section > header h1:after, #wrapper > section > header h2:after {
+		#wrapper > section > header h1:after {
+			right: -7.5rem;
+		}
+
+		#wrapper > section > header h2:after {
 			right: -2.5rem;
 		}
 

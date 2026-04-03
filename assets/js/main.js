@@ -205,4 +205,17 @@
 
 					});
 
+// Nav toggle (mobile)
+$(function() {
+	$('#nav-toggle').on('click', function(e) {
+		e.preventDefault();
+		$('.nav-links').toggleClass('open');
+	});
+
+	// Close menu when a link is clicked
+	$(document).on('click', '.nav-links a', function() {
+		$('.nav-links').removeClass('open');
+	});
+});
+
 })(jQuery);
